@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import time
 from datetime import datetime
@@ -69,14 +70,15 @@ class ScrapePeMS:
             temp_end_time = min(temp_end_time+604800, end_time)
             if(temp_start_time >= end_time):
                 break
-            
-# test parameters         
-station_id = 717014
-start_time = '2010/01/01'
-end_time = '2010/02/28'
-num_lane = 4
-destpath = os.path.join('C:\\Users\\1615055\\DWLab_2020\\data', str(station_id))
 
-browser.get('http://pems.dot.ca.gov/')
-# must login first to run the following code
-# module = ScrapePeMS(station_id, start_time, end_time, num_lane, destpath)  
+if __name__ == "__main__":
+    # test parameters         
+    station_id = 717014
+    start_time = '2010/01/01'
+    end_time = '2010/02/28'
+    num_lane = 4
+    destpath = os.path.join('C:\\Users\\1615055\\DWLab_2020\\data', str(station_id))
+    
+    browser.get('http://pems.dot.ca.gov/')
+    # must login first to run the following code
+    # module = ScrapePeMS(station_id, start_time, end_time, num_lane, destpath)  
