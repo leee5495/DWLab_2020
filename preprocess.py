@@ -82,6 +82,6 @@ class Preprocess:
 
 if __name__ == "__main__":
     # test parameters
-    srcpath = "C:\\Users\\1615055\\DWLab_2020\\data"
-    destpath = "C:\\Users\\1615055\\DWLab_2020\\data"
+    srcpath = "C:/Users/1615055/DWLab_2020/data"
+    destpath = "C:/Users/1615055/DWLab_2020/data"
     Preprocess(srcpath, destpath)
