@@ -1,6 +1,9 @@
 # DWLab_2020
 Experimentation code for Pattern Classification Model based on Attention Mechanism and CNN for Analysis of Traffic Data including Missing Values
 
+![image](https://github.com/leee5495/DWLab_2020/blob/master/misc/%EB%8F%84%ED%98%95.png)
+
+
 ### data.py
 scrapes [Caltrans PeMS](http://pems.dot.ca.gov/) traffic data 
 - `station_id`:  id of the station in interest
