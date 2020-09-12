@@ -6,7 +6,7 @@ from keras.models import Model
 from keras.models import load_model
 from keras.layers import Input, Reshape, Dropout, Dense, Conv2D, Flatten, MaxPooling2D, AveragePooling2D, Concatenate, Multiply
 
-class Model:
+class TrafficModel:
     def __init__(self, input_dim, meta_dim, output_dim, hidden_dims, dropout_rate, pooling_size=2, stride_size=2, pooling_method="max", import_model=False, modelname=''):
         self.input_dim = input_dim
         self.meta_dim = meta_dim

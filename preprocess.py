@@ -36,7 +36,7 @@ class Preprocess:
                 # make model input
                 input_data = self.make_input(whole_data)
                 # write input data to the destpath
-                input_data.to_csv(os.path.join(self.destpath, station+"_"+lane+".csv"), sep='\t')
+                input_data.to_csv(os.path.join(self.destpath, station+"_"+lane+".csv"), sep=',')
 
     def make_input(self, data):
         #format datetime
