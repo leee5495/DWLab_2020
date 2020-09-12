@@ -6,9 +6,6 @@ from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 
-# path to the selenium browser
-browser = webdriver.Chrome(executable_path=r"C:\\Users\\1615055\\DWLab_2020\\chromedriver.exe")
-
 class Data:
     def __init__(self, station_id, start_time, end_time, num_lane, destpath):
         self.station_id = station_id
@@ -79,6 +76,9 @@ if __name__ == "__main__":
     num_lane = 4
     destpath = os.path.join('C:\\Users\\1615055\\DWLab_2020\\data', str(station_id))
     
+    # path to the selenium browser
+    browser = webdriver.Chrome(executable_path=r"C:\\Users\\1615055\\DWLab_2020\\chromedriver.exe")
     browser.get('http://pems.dot.ca.gov/')
+    
     # must login first to run the following code
     # module = Data(station_id, start_time, end_time, num_lane, destpath)  
