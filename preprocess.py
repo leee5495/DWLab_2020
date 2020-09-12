@@ -5,7 +5,7 @@ from datetime import timedelta
 
 import pandas as pd
 
-class PreprocessPeMS:
+class Preprocess:
     def __init__(self, srcpath, destpath):
         self.srcpath = srcpath
         self.destpath = destpath
@@ -59,7 +59,6 @@ class PreprocessPeMS:
         while(True):
             new_data = {}
             cur_date = data.iloc[cur_ind]['5 Minutes']
-            print(cur_date)
             new_data['date'] = cur_date
             num_nan = 0
             for i in range(288):
@@ -85,4 +84,4 @@ if __name__ == "__main__":
     # test parameters
     srcpath = "C:\\Users\\1615055\\DWLab_2020\\data"
     destpath = "C:\\Users\\1615055\\DWLab_2020\\data"
-    PreprocessPeMS(srcpath, destpath)
+    Preprocess(srcpath, destpath)

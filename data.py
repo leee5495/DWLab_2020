@@ -9,7 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 # path to the selenium browser
 browser = webdriver.Chrome(executable_path=r"C:\\Users\\1615055\\DWLab_2020\\chromedriver.exe")
 
-class ScrapePeMS:
+class Data:
     def __init__(self, station_id, start_time, end_time, num_lane, destpath):
         self.station_id = station_id
         self.start_time = start_time
@@ -81,4 +81,4 @@ if __name__ == "__main__":
     
     browser.get('http://pems.dot.ca.gov/')
     # must login first to run the following code
-    # module = ScrapePeMS(station_id, start_time, end_time, num_lane, destpath)  
+    # module = Data(station_id, start_time, end_time, num_lane, destpath)  
