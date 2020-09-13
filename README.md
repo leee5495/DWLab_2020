@@ -1,4 +1,4 @@
-# DWLab_2020
+# DWLab 2020
 Experimentation code for Pattern Classification Model based on Attention Mechanism and CNN for Analysis of Traffic Data including Missing Values
 
 ![image](https://github.com/leee5495/DWLab_2020/blob/master/misc/%EB%8F%84%ED%98%95.png)
