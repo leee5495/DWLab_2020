@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 if __name__ == "__main__":
-    datapath = "C:/Users/1615055/DWLab_2020/data"
+    datapath = "../data"
     filename = "737257_Lane1.csv"
     data = pd.read_csv(os.path.join(datapath, filename), index_col=[0])
     

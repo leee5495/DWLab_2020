@@ -74,7 +74,7 @@ if __name__ == "__main__":
     start_time = '2010/01/01'
     end_time = '2010/02/28'
     num_lane = 4
-    destpath = os.path.join('C:/Users/1615055/DWLab_2020/data', str(station_id))
+    destpath = os.path.join('./data', str(station_id))
     
     # path to the selenium browser
     browser = webdriver.Chrome(executable_path=r"C:\\Users\\1615055\\DWLab_2020\\chromedriver.exe")

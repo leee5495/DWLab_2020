@@ -21,8 +21,7 @@ class Preprocess:
                 if lane == "Agg":
                     continue
                 # for each file in the lane directory
-                os.chdir(lane_datapath)
-                for file in glob.glob("*.txt"):
+                for file in glob.glob(os.path.join(lane_datapath, "*.txt")):
                     # read data
                     data = pd.read_csv(file, delimiter="\t")
                     data = data.astype(str)
@@ -82,6 +81,6 @@ class Preprocess:
 
 if __name__ == "__main__":
     # test parameters
-    srcpath = "C:/Users/1615055/DWLab_2020/data"
-    destpath = "C:/Users/1615055/DWLab_2020/data"
+    srcpath = "./data"
+    destpath = "./data"
     Preprocess(srcpath, destpath)

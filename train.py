@@ -6,12 +6,11 @@ from module.model import TrafficModel
 from module.data_manager import DataManager
 
 if __name__ == "__main__":
-    datapath = "C:/Users/1615055/DWLab_2020/data"
-    modelpath = "C:/Users/1615055/DWLab_2020/model"
-    os.chdir(datapath)
+    datapath = "./data"
+    modelpath = "./model"
     
     #for each data
-    for file in glob.glob("*.csv"):
+    for file in glob.glob(os.path.join(datapath, "*.csv")):
         #retrieve data
         filename = file
         train_rate = 0.7
@@ -20,7 +19,7 @@ if __name__ == "__main__":
         data_manager = DataManager(filename, train_rate, valid_rate, test_rate)
         
         #create model directory
-        lane_modelpath = os.path.join(modelpath, filename.split('.')[0])
+        lane_modelpath = os.path.join(modelpath, filename.split('\\')[1].split('.')[0])
         if not os.path.exists(lane_modelpath):
             os.mkdir(lane_modelpath) 
         

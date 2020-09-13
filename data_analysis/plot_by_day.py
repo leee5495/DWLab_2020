@@ -10,7 +10,7 @@ sys.path.append("../module")
 from data_manager import DataManager
 
 if __name__ == "__main__":
-    datapath = "C:/Users/1615055/DWLab_2020/data"
+    datapath = "../data"
     os.chdir(datapath)
     data_managers = []
 
