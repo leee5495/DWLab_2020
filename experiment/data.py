@@ -3,6 +3,7 @@ import os
 import time
 from datetime import datetime
 
+from pathlib import Path
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -26,7 +27,7 @@ class Data:
         #for all aggregates
         new_dir = os.path.join(self.destpath, "Agg")
         if not os.path.exists(new_dir):
-                os.mkdir(new_dir) 
+            Path(new_dir).mkdir(parents=True, exist_ok=True)
                 
     def downloadFile(self):
         file_url = 'http://pems.dot.ca.gov/?report_form=1&dnode=VDS&content=loops&tab=det_timeseries&export=text&station_id={}&s_time_id={}&e_time_id={}&tod=all&tod_from=0&tod_to=0&dow_0=on&dow_1=on&dow_2=on&dow_3=on&dow_4=on&dow_5=on&dow_6=on&holidays=on&q=flow&gn=5min&{}'
@@ -79,9 +80,10 @@ if __name__ == "__main__":
     browser.get('http://pems.dot.ca.gov/')
     
     # must login first to run the following code
+    """
     start_time = '2006/04/01'
     end_time = '2006/09/30'
-    module = Data(station_id, start_time, end_time, num_lane, os.path.join(destpath, "2006"))  
+    module = Data(station_id, start_time, end_time, num_lane, os.path.join(destpath, "2006"))
     
     start_time = '2007/04/01'
     end_time = '2007/09/30'
@@ -98,3 +100,4 @@ if __name__ == "__main__":
     start_time = '2010/04/01'
     end_time = '2010/09/30'
     module = Data(station_id, start_time, end_time, num_lane, os.path.join(destpath, "2010")) 
+    """
