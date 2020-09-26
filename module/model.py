@@ -7,12 +7,13 @@ from keras.models import load_model
 from keras.layers import Input, Reshape, Dropout, Dense, Conv2D, Flatten, MaxPooling2D, AveragePooling2D, Concatenate, Multiply
 
 class TrafficModel:
-    def __init__(self, input_dim, meta_dim, output_dim, hidden_dims, dropout_rate, pooling_size=2, stride_size=2, pooling_method="max", import_model=False, modelname=''):
+    def __init__(self, input_dim, meta_dim, output_dim, hidden_dims, dropout_rate, use_att=True, pooling_size=2, stride_size=2, pooling_method="max", import_model=False, modelname=''):
         self.input_dim = input_dim
         self.meta_dim = meta_dim
         self.output_dim = output_dim
         self.hidden_dims = hidden_dims
         self.dropout_rate = dropout_rate
+        self.use_att = use_att
         self.pooling_size = pooling_size
         self.stride_size = stride_size
         self.pooling_method = pooling_method
@@ -24,13 +25,17 @@ class TrafficModel:
     def create_model(self):
         #input layers
         input_layer = Input(shape=(self.input_dim,))
-        meta_input_layer = Input(shape=(self.meta_dim,))
+        if self.use_att:
+            meta_input_layer = Input(shape=(self.meta_dim,))
         
         #process attention
-        state = Concatenate()([input_layer, meta_input_layer])
-        p0 = Dense(self.input_dim, activation='relu')(state)
-        p0 = Dense(self.input_dim, activation='sigmoid')(p0)
-        hidden = Multiply()([input_layer, p0])
+        if self.use_att:
+            state = Concatenate()([input_layer, meta_input_layer])
+            p0 = Dense(self.input_dim, activation='relu')(state)
+            p0 = Dense(self.input_dim, activation='sigmoid')(p0)
+            hidden = Multiply()([input_layer, p0])
+        else:
+            hidden = input_layer
         
         #CNN
         hidden = Reshape((self.input_dim,1,1))(hidden)
