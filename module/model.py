@@ -25,8 +25,7 @@ class TrafficModel:
     def create_model(self):
         #input layers
         input_layer = Input(shape=(self.input_dim,))
-        if self.use_att:
-            meta_input_layer = Input(shape=(self.meta_dim,))
+        meta_input_layer = Input(shape=(self.meta_dim,))
         
         #process attention
         if self.use_att:
