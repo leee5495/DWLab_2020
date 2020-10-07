@@ -1,6 +1,10 @@
 # DWLab 2020
 Experimentation code for Pattern Classification Model based on Attention Mechanism and CNN for Analysis of Traffic Data including Missing Values
 
+Paper: [Pattern Classification based on Attention Mechanism and CNN for Sensor Stream Data including Missing Values](https://github.com/leee5495/DWLab_2020/blob/master/misc/KDBC_lej.pdf)
+<br>
+<br>
+
 ![image](https://github.com/leee5495/DWLab_2020/blob/master/misc/%EB%8F%84%ED%98%95.png)
 
 
